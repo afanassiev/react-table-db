@@ -1,0 +1,10 @@
+.ModeSelector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 250px;
+}
+
+.button {
+    margin-left: 10px;
+}
