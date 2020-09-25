@@ -45,26 +45,22 @@ const inputStyle = {
   background: 'transparent',
 }
 
-// Create an editable cell renderer
 const EditableCell = ({
                         value: initialValue,
                         row: { index },
                         column: { id },
-                        updateMyData, // This is a custom function that we supplied to our table instance
+                        updateMyData,
                       }) => {
-  // We need to keep and update the state of the cell normally
   const [value, setValue] = React.useState(initialValue)
 
   const onChange = e => {
     setValue(e.target.value)
   }
 
-  // We'll only update the external data when the input is blurred
   const onBlur = () => {
     updateMyData(index, id, value)
   }
 
-  // If the initialValue is changed externall, sync it up with our state
   React.useEffect(() => {
     setValue(initialValue)
   }, [initialValue])
@@ -92,7 +88,6 @@ EditableCell.propTypes = {
   updateMyData: PropTypes.func.isRequired,
 }
 
-// Set our editable cell renderer as the default Cell renderer
 const defaultColumn = {
   Cell: EditableCell,
 }
@@ -120,11 +115,6 @@ const EnhancedTable = ({
       data,
       defaultColumn,
       autoResetPage: !skipPageReset,
-      // updateMyData isn't part of the API, but
-      // anything we put into these options will
-      // automatically be available on the instance.
-      // That way we can call this function from our
-      // cell renderer!
       updateMyData,
     },
     useGlobalFilter,

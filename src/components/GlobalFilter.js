@@ -51,10 +51,6 @@ const GlobalFilter = ({
   const classes = useStyles()
   const count = preGlobalFilteredRows.length
 
-  // Global filter only works with pagination from the first page.
-  // This may not be a problem for server side pagination when
-  // only the current page is downloaded.
-
   return (
     <div className={classes.search}>
       <div className={classes.searchIcon}>

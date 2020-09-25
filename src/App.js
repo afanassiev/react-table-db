@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useMemo} from 'react'
+import React, {useState, useMemo} from 'react'
 import axios from 'axios'
 import ModeSelector from "./components/ModeSelector";
 import Loader from "./components/Loader/Loader";
@@ -65,10 +65,6 @@ const App = () => {
     )
   }
 
-  // const getRowProps = row => (
-  //   console.log(row)
-  // )
-
   if(!isModeSelected){
     return (
       <div>
@@ -90,7 +86,6 @@ const App = () => {
             setData={setData}
             updateMyData={updateMyData}
             skipPageReset={skipPageReset}
-            // getRowProps={getRowProps}
           />
         </div>
       )
