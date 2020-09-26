@@ -1,6 +1,6 @@
 import React, {useState, useMemo} from 'react'
 import axios from 'axios'
-import ModeSelector from "./components/ModeSelector";
+import ModeSelector from "./components/ModeSelector/ModeSelector";
 import Loader from "./components/Loader/Loader";
 import CssBaseline from '@material-ui/core/CssBaseline'
 import EnhancedTable from './components/EnhancedTable'
